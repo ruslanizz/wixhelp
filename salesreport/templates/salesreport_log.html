@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block my_content %}
+
+<div class="container">
+    <h3>Файл для интернет-магазина WIX готов</h3>
+        <br>
+        {% load static %}
+        <a href = "{% static 'ready_to_wix.csv' %}" download role="button" class="btn btn-primary">СКАЧАТЬ ФАЙЛ</a>
+        <br><br>
+</div>
+
+<div class="container" class="fs-6">
+
+    <h3>Посмотрите все ли в порядке:</h3>
+
+
+      {%for key,value in data.items%}
+
+        <b>{{key}}</b> &nbsp &nbsp
+        {%for k,v in value.items%}
+
+                {{k}}: {{v}} <br>
+
+        {%endfor%}
+        <br>
+
+      {%endfor%}
+      <br>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
